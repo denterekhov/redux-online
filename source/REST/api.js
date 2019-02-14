@@ -61,9 +61,17 @@ export const api = {
                 body: JSON.stringify({ comment }),
             });
         },
-        remove (id) {
-            return fetch(`${MAIN_URL}/feed/${id}`, {
+        remove (postId) {
+            return fetch(`${MAIN_URL}/feed/${postId}`, {
                 method:  'DELETE',
+                headers: {
+                    Authorization: this.token,
+                },
+            });
+        },
+        like (postId) {
+            return fetch(`${MAIN_URL}/feed/like/${postId}`, {
+                method:  'PUT',
                 headers: {
                     Authorization: this.token,
                 },

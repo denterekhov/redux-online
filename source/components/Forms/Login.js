@@ -13,17 +13,17 @@ import { authActions } from '../../bus/auth/actions';
 
 const mapStateToProps = (state) => {
     return {
-        isFetching: state.ui.get('isFetching')
-    }
-}
+        isFetching: state.ui.get('isFetching'),
+    };
+};
 
 const mapDispatchToProps = {
     loginAsync: authActions.loginAsync,
-}
+};
 
 @connect(
-  mapStateToProps, 
-  mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )
 
 export default class LoginForm extends Component {
