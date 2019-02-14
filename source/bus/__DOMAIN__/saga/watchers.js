@@ -7,10 +7,10 @@ import { types } from '../types';
 //Workers
 import { worker } from './workers';
 
-function* watchWorker() {
+function* watchWorker () {
     yield takeEvery(types.TYPE, worker);
 }
 
-export function* watchDomain() {
+export function* watchDomain () {
     yield all([call(watchWorker)]);
 }
