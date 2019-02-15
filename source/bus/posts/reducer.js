@@ -41,7 +41,7 @@ export const postsReducer = (state = initialState, action) => {
                     'likes'
                 ],
                 (likes) => {
-                    return likes.filter((liker) => liker.get('id') !== action.payload.likerId);
+                    return likes.filter((user) => user.get('id') !== action.payload.userId);
                 }
             );
 
