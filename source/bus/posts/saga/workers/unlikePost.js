@@ -16,11 +16,11 @@ export function* unlikePost ({ payload: postId }) {
             throw new Error(message);
         }
 
-        const likerId = yield select((state) => {
+        const userId = yield select((state) => {
             return state.profile.get('id');
         });
 
-        yield put(postsActions.unlikePost({ likerId, postId }));
+        yield put(postsActions.unlikePost({ postId, userId }));
     } catch (error) {
         yield put(uiActions.emitError(error, 'unlikePost worker'));
     } finally {
