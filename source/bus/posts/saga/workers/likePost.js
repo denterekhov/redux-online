@@ -16,8 +16,8 @@ export function* likePost ({ payload: postId }) {
             throw new Error(message);
         }
 
-        const liker = yield select((state) => {
-            return state.profile.removeAll(['avatar', 'token']);
+        const liker = yield select(({ profile }) => {
+            return profile.removeAll(['avatar', 'token']);
         });
 
         yield put(postsActions.likePost({ liker, postId }));
