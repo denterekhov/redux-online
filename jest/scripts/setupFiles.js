@@ -7,6 +7,21 @@ const errorMessage = 'TEST_ERROR_MESSAGE.';
 const token = 'TEST_TOKEN';
 const error = new Error(errorMessage);
 
+const users = [
+    {
+        id:        'TEST_ID_1',
+        avatar:    'TEST_AVATAR_1',
+        firstName: 'Test user firstName 1',
+        lastName:  'Test user lastName 1',
+    },
+    {
+        id:        'TEST_ID_2',
+        avatar:    'TEST_AVATAR_2',
+        firstName: 'Test user firstName 2',
+        lastName:  'Test user lastName 2',
+    }
+];
+
 const userProfile = {
     id:        'TEST_ID',
     avatar:    'TEST_AVATAR',
@@ -48,6 +63,7 @@ const fetchResponseFail400 = {
 const url = 'https://www.url.com';
 
 global.__ = {
+    users,
     userProfile,
     errorMessage,
     token,
