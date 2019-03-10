@@ -21,4 +21,8 @@ describe('ui actions:', () => {
     test('emitError', () => {
         expect(uiActions.emitError(__.error)).toMatchSnapshot();
     });
+
+    test('emitError with meta information', () => {
+        expect(uiActions.emitError(__.error, __.meta)).toMatchSnapshot();
+    });
 });

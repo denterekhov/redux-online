@@ -6,6 +6,7 @@ const successMessage = 'TEST_SUCCESS_MESSAGE.';
 const errorMessage = 'TEST_ERROR_MESSAGE.';
 const token = 'TEST_TOKEN';
 const error = new Error(errorMessage);
+const meta = 'META_INFORMATION';
 
 const users = [
     {
@@ -50,6 +51,10 @@ const fetchResponseSuccess = {
     json:   jest.fn(() => Promise.resolve(responseDataSuccess)),
 };
 
+const fetchResponseSuccess204 = {
+    status: 204,
+};
+
 const fetchResponseFail401 = {
     status: 401,
     json:   jest.fn(() => Promise.resolve(responseDataFail)),
@@ -79,9 +84,11 @@ global.__ = {
     errorMessage,
     token,
     error,
+    meta,
     responseDataSuccess,
     responseDataFail,
     fetchResponseSuccess,
+    fetchResponseSuccess204,
     fetchResponseFail401,
     fetchResponseFail400,
     credentials,
